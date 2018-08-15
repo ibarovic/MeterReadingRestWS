@@ -23,7 +23,7 @@ mvn clean package
 java -jar target/MeterReadingRestWS-0.0.1-SNAPSHOT.jar
 ```
 
-Alternatively, you can run the app without packaging it using
+Alternatively, you can run the app with
 
 ```bash
 mvn spring-boot:run
