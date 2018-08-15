@@ -31,7 +31,7 @@ mvn spring-boot:run
 
 The app will start running at <http://localhost:8080>.
 
-### H2 in-memory database connection
+#### H2 in-memory database connection
 
 - http://localhost:8080/h2-console/login.jsp
   - JDBC URL: jdbc:h2:mem:testdb
@@ -41,7 +41,7 @@ The app will start running at <http://localhost:8080>.
   
 ## Explore Rest APIs
 
-The app defines following CRUD APIs.
+The app defines following API methods.
 
     GET /ratios
     GET /ratios?profile=:profile
