@@ -11,7 +11,7 @@ This is example of REST API built with Java 8, Maven, Spring Boot (2.0.3.RELEASE
 git clone https://github.com/ibarovic/MeterReadingRestWS.git
 ```
 
-**2. Set logging directory ** 
+**2. Set logging directory** 
 
 - open `src/main/resources/logback.xml`
 - change `ROOT_DIR` to a path where you want the logs to be saved
