@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+	<contextName>MeterReadingRestWS</contextName>
+
+	<property name="ROOT_DIR" value="../logs/MeterReadingRestWS" />
+	<property name="MAIN_LOG" value="MeterReadingRestWS-log" />
+
+	<property name="PATTERN_DEFAULT"
+		value="[%date{ISO8601}][%-5level][sid= | uid=%X{userId} | ip=%X{ipAddress}][%X{ID1} | %X{ID2}][%thread | %logger{36}] :: %message%n%exception" />
+
+	<appender name="MAIN_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<append>true</append>
+		<file>${ROOT_DIR}/${MAIN_LOG}.log</file>
+		<encoder>
+			<pattern>${PATTERN_DEFAULT}</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${ROOT_DIR}/${MAIN_LOG}-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${PATTERN_DEFAULT}</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Application Loggers -->
+
+	<logger name="com.typeqast" level="DEBUG">
+		<appender-ref ref="MAIN_APPENDER" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="CONSOLE"/> 
+	</root>
+
+</configuration>
