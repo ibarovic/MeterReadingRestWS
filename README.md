@@ -19,7 +19,7 @@ git clone https://github.com/ibarovic/MeterReadingRestWS.git
 **3. Build and run the app using maven**
 
 ```bash
-mvn clean package
+mvn clean package -DskipTests
 java -jar target/MeterReadingRestWS-0.0.1-SNAPSHOT.jar
 ```
 
